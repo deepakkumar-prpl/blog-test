@@ -46,6 +46,7 @@ gem 'pg'
 gem 'bundler-audit', require: false
 gem 'activesupport', '>= 7.0.7.1'
 gem 'brakeman', '~> 5.1', require: false
+gem 'rubocop', require: false
 # Use Sass to process CSS
 # gem "sassc-rails"
 
