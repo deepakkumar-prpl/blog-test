@@ -14,9 +14,18 @@
           null,
           null,
           null
-        ]
+        ],
+        "branches": {
+        }
+      },
+      "/home/prpl-tech/deepak/blog/spec/models/task_spec.rb": {
+        "lines": [
+
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1705070602
+    "timestamp": 1705079928
   }
 }

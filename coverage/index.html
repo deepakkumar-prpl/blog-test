@@ -9,12 +9,12 @@
     <link rel="icon" type="image/png" href="./assets/0.12.3/favicon.png" />
   </head>
 
-  <body>
+  <body data-branch-coverage=true>
     <div id="loading">
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2024-01-12T20:13:22+05:30">2024-01-12T20:13:22+05:30</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2024-01-12T22:48:48+05:30">2024-01-12T22:48:48+05:30</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -39,7 +39,7 @@
   <a name="AllFiles"></a>
 
   <div>
-    <b>1</b> files in total.
+    <b>2</b> files in total.
   </div>
 
   <div class="t-line-summary">
@@ -52,6 +52,16 @@
 )
   </div>
 
+  
+    <div class="t-branch-summary">
+      <span><b>0</b> total branches, </span>
+      <span class="green"><b>0</b> branches covered</span> and
+      <span class="red"><b>0</b> branches missed.</span>
+      (<span class="green">
+  100.0%
+</span>
+)
+    </div>
   
 
   <div class="file_list--responsive">
@@ -66,6 +76,11 @@
           <th class="cell--number">Lines missed</th>
           <th class="cell--number">Avg. Hits / Line</th>
           
+            <th class="cell--number">Branch Coverage</th>
+            <th class="cell--number">Branches</th>
+            <th class="cell--number">Covered branches</th>
+            <th class="cell--number">Missed branches </th>
+          
         </tr>
       </thead>
       <tbody>
@@ -78,6 +93,27 @@
             <td class="cell--number">5</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
+            
+              <td class="green strong cell--number t-file__branch-coverage">100.00 %</td>
+              <td class="cell--number">0</td>
+              <td class="cell--number">0</td>
+              <td class="cell--number">0</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#a80c9077f796c2ef42fd37e08e8f5ecf3cfe98d3" class="src_link" title="spec/models/task_spec.rb">spec/models/task_spec.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">0.00</td>
+            
+              <td class="green strong cell--number t-file__branch-coverage">100.00 %</td>
+              <td class="cell--number">0</td>
+              <td class="cell--number">0</td>
+              <td class="cell--number">0</td>
             
           </tr>
         
@@ -110,6 +146,14 @@
     </h4>
 
     
+      <h4>
+        <span class="green">
+  100.0%
+</span>
+
+        branches covered
+      </h4>
+    
 
     <div class="t-line-summary">
       <b>5</b> relevant lines.
@@ -117,6 +161,12 @@
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
+    
+      <div class="t-branch-summary">
+          <span><b>0</b> total branches, </span>
+          <span class="green"><b>0</b> branches covered</span> and
+          <span class="red"><b>0</b> branches missed.</span>
+      </div>
     
 
   </div>
@@ -130,6 +180,8 @@
             
 
             
+              
+            
 
             <code class="ruby"># frozen_string_literal: true</code>
           </li>
@@ -140,6 +192,8 @@
             
             
 
+            
+              
             
 
             <code class="ruby"></code>
@@ -152,6 +206,8 @@
             
 
             
+              
+            
 
             <code class="ruby">require &#39;spec_helper&#39;</code>
           </li>
@@ -162,6 +218,8 @@
             
             
 
+            
+              
             
 
             <code class="ruby"></code>
@@ -174,6 +232,8 @@
             
 
             
+              
+            
 
             <code class="ruby">RSpec.describe Math do</code>
           </li>
@@ -184,6 +244,8 @@
             <span class="hits">1</span>
             
 
+            
+              
             
 
             <code class="ruby">  describe &#39;#add&#39; do</code>
@@ -196,6 +258,8 @@
             
 
             
+              
+            
 
             <code class="ruby">    it &#39;adds two numbers&#39; do</code>
           </li>
@@ -206,6 +270,8 @@
             <span class="hits">1</span>
             
 
+            
+              
             
 
             <code class="ruby">      expect(1 + 2).to eq(3)</code>
@@ -218,6 +284,8 @@
             
 
             
+              
+            
 
             <code class="ruby">    end</code>
           </li>
@@ -228,6 +296,8 @@
             
             
 
+            
+              
             
 
             <code class="ruby">  end</code>
@@ -240,10 +310,57 @@
             
 
             
+              
+            
 
             <code class="ruby">end</code>
           </li>
         </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="a80c9077f796c2ef42fd37e08e8f5ecf3cfe98d3">
+  <div class="header">
+    <h3>spec/models/task_spec.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+      <h4>
+        <span class="green">
+  100.0%
+</span>
+
+        branches covered
+      </h4>
+    
+
+    <div class="t-line-summary">
+      <b>0</b> relevant lines.
+      <span class="green"><b>0</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+      <div class="t-branch-summary">
+          <span><b>0</b> total branches, </span>
+          <span class="green"><b>0</b> branches covered</span> and
+          <span class="red"><b>0</b> branches missed.</span>
+      </div>
+    
+
+  </div>
+
+  <pre>
+    <ol>
       
     </ol>
   </pre>
