@@ -88,6 +88,12 @@ jobs:
       uses: actions/download-artifact@v1
       with:
         name: head-result
+        
+    - name: print files
+      run: |
+         ls 
+         cat ./head-result/.resultset.json
+         cat ./base-result/.resultset.json
 
     - uses: kzkn/simplecov-resultset-diff-action@v1
       with:
