@@ -44,6 +44,12 @@ jobs:
         uses: aki77/simplecov-report-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+      - name: ResultDiff Report
+      - uses: kzkn/simplecov-resultset-diff-action@v1
+        with:
+          base-resultset-path: coverage/.resultset.json
+          head-resultset-path: coverage/.resultset.json
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload coverage report
         if: always()
         uses: actions/upload-artifact@v2
