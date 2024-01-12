@@ -43,6 +43,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 gem 'puredocx'
 gem 'pg'
+gem 'bundler-audit', require: false
 # Use Sass to process CSS
 # gem "sassc-rails"
 
