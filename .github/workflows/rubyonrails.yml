@@ -46,7 +46,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       # resuld diff report
       - name: ResultDiff Report
-      - uses: kzkn/simplecov-resultset-diff-action@v1
+        uses: kzkn/simplecov-resultset-diff-action@v1
         with:
           base-resultset-path: coverage/.resultset.json
           head-resultset-path: coverage/.resultset.json
