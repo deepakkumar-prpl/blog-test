@@ -4,6 +4,7 @@ require 'simplecov'
 require 'simplecov-lcov'
 SimpleCov.start do
   enable_coverage :branch
+  add_group 'RSpec', 'spec'
 end
 
 # Previous content of test helper now starts here
