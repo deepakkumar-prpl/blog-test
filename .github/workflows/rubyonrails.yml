@@ -46,14 +46,14 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Test Report ls
         run: |
-          ls
+          ls coverage
       # resuld diff report
       - name: ResultDiff Report
         continue-on-error: true
         uses: kzkn/simplecov-resultset-diff-action@v1
         with:
-          base-resultset-path: coverage/.resultset.json
-          head-resultset-path: coverage/.resultset.json
+          base-resultset-path: './coverage/.resultset.json'
+          head-resultset-path: './coverage/.resultset.json'
           token: ${{ secrets.GITHUB_TOKEN }}
       # upload coverage
       - name: Upload coverage report
