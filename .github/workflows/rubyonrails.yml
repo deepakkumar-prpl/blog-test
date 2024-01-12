@@ -91,6 +91,8 @@ jobs:
     - name: Test Report ls
       run: |
         ls
+        cat ./base-result/.resultset.json
+        cat ./head-result/.resultset.json
 
     - uses: kzkn/simplecov-resultset-diff-action@v1
       with:
