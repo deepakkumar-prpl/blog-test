@@ -39,6 +39,47 @@ jobs:
       # Add or replace test runners here
       - name: Run tests
         run: bin/rake
+      # code coverage
+      - name: Simplecov Report
+        uses: aki77/simplecov-report-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      # resuld diff report
+      - name: ResultDiff Report
+        uses: kzkn/simplecov-resultset-diff-action@v1
+        with:
+          base-resultset-path: coverage/.resultset.json
+          head-resultset-path: coverage/.resultset.json
+          token: ${{ secrets.GITHUB_TOKEN }}
+      # upload coverage
+      - name: Upload coverage report
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: head-result
+          path: coverage/.resultset.json
+    
+  compare:
+    name: 'Compare base & head coverages'
+    runs-on: ubuntu-latest
+    needs: [test]
+
+    steps:
+    - name: Download base artifact
+      uses: actions/download-artifact@v1
+      with:
+        name: base-result
+
+    - name: Download head artifact
+      uses: actions/download-artifact@v1
+      with:
+        name: base-result
+
+    - uses: kzkn/simplecov-resultset-diff-action@v1
+      with:
+        base-resultset-path: ./base-result/.resultset.json
+        head-resultset-path: ./head-result/.resultset.json
+        token: ${{ secrets.GITHUB_TOKEN }}
 
   lint:
     runs-on: ubuntu-latest
