@@ -3,6 +3,8 @@
     "coverage": {
       "/home/prpl-tech/deepak/blog/spec/math_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -12,9 +14,18 @@
           null,
           null,
           null
-        ]
+        ],
+        "branches": {
+        }
+      },
+      "/home/prpl-tech/deepak/blog/spec/models/task_spec.rb": {
+        "lines": [
+
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1705064131
+    "timestamp": 1705079928
   }
 }
