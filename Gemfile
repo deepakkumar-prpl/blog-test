@@ -44,6 +44,7 @@ gem "bootsnap", require: false
 gem 'puredocx'
 gem 'pg'
 gem 'bundler-audit', require: false
+gem 'activesupport', '>= 7.0.7.1'
 # Use Sass to process CSS
 # gem "sassc-rails"
 
