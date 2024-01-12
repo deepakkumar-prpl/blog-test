@@ -39,6 +39,11 @@ jobs:
       # Add or replace test runners here
       - name: Run tests
         run: bin/rake
+      # code coverage
+      - name: Simplecov Report
+        uses: aki77/simplecov-report-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
   lint:
     runs-on: ubuntu-latest
