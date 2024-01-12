@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class Task < ApplicationRecord
   class << self
     def generate_docx
       PureDocx.create('/home/prpl-tech/deepak/blog/doc.docx', paginate_pages: 'right') do |doc|
-        table = [
+        [
           [
             { column: [doc.text('first column, first row')] },
             {
@@ -14,12 +16,6 @@ class Task < ApplicationRecord
             }
           ]
         ]
-
-        table_options = {
-          table_width: 4000,
-          sides_without_border: %i[left top right insideH insideV],
-          bold_sides: [:bottom]
-        }
         doc.header([
                      doc.text('header', style: [:italic], size: 28, align: 'left')
                    ])
