@@ -39,8 +39,8 @@ jobs:
       - name: Run Migrations
         run: bin/rails db:migrate RAILS_ENV=test
       # Add or replace test runners here
-      - name: Run tests
-        run: rspec
+      - name: Run RSpec
+        run: bundle exec rspec
       # upload coverage
       - name: Upload coverage report head
         if: always()
@@ -64,8 +64,8 @@ jobs:
           bundler-cache: true
       - name: Run Migrations
         run: bin/rails db:migrate RAILS_ENV=test
-      - name: Run test
-        run: rspec
+      - name: Run RSpec
+        run: bundle exec rspec
       - name: Upload coverage report base
         if: always()
         uses: actions/upload-artifact@v2
