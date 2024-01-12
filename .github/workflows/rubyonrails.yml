@@ -46,6 +46,11 @@ jobs:
         with:
           name: head-result
           path: coverage/.resultset.json
+      # Minimum configuration
+      - name: Minimum coverage check
+        uses: joshmfrankel/simplecov-check-action@main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
       
       # base 
       - uses: actions/checkout@v2
