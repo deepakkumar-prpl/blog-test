@@ -16,4 +16,25 @@ RSpec.describe Item, type: :model do
       expect(item.calculate2).to eq(3)
     end
   end
+
+  describe '#calculate2' do
+    it 'returns the correct result' do
+      item = Item.new
+      expect(item.calculate2).to eq(3)
+    end
+  end
+
+  describe '#calculate2' do
+    it 'returns the correct result' do
+      item = Item.new
+      expect(item.calculate2).to eq(3)
+    end
+  end
+
+  describe '#calculate2' do
+    it 'returns the correct result' do
+      item = Item.new
+      expect(item.calculate2).to eq(3)
+    end
+  end
 end
