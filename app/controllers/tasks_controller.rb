@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# frozen_string_literal: true 
 
 class TasksController < ApplicationController
   before_action :set_task, only: %i[show edit update destroy]
@@ -17,7 +17,9 @@ class TasksController < ApplicationController
   end
 
   # GET /tasks/1/edit
-  def edit; end
+  def edit
+    puts "hey"
+  end
 
   # POST /tasks or /tasks.json
   def create
