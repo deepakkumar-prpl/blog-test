@@ -95,6 +95,7 @@ jobs:
         cat ./head-result/.resultset.json
 
     - uses: kzkn/simplecov-resultset-diff-action@v1
+      continue-on-error: true
       with:
         base-resultset-path: ./base-result/.resultset.json
         head-resultset-path: ./head-result/.resultset.json
