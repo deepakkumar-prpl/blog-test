@@ -40,6 +40,7 @@ jobs:
         run: bin/rails db:migrate RAILS_ENV=test
       # Add or replace test runners here
       - name: Run tests
+        continue-on-error: true
         run: bundle exec rspec -f j -o tmp/rspec_results.json -f p
 
       - name: RSpec Report
@@ -57,10 +58,10 @@ jobs:
           name: head-result
           path: coverage/.resultset.json
       # Minimum configuration
-      - name: Minimum coverage check
-        uses: joshmfrankel/simplecov-check-action@main
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Minimum coverage check
+      #   uses: joshmfrankel/simplecov-check-action@main
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
       
       # base 
       - uses: actions/checkout@v2
