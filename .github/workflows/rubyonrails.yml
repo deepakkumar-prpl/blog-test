@@ -41,47 +41,47 @@ jobs:
       # Add or replace test runners here
       - name: Run tests
         continue-on-error: true
-        run: bundle exec rspec -f j -o tmp/rspec_results.json -f p
+        run: bundle exec rspec 
 
-      - name: RSpec Report
-        uses: SonicGarden/rspec-report-action@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          json-path: tmp/rspec_results.json
-        if: always()
-
-      # upload coverage
-      - name: Upload coverage report head
-        if: always()
-        uses: actions/upload-artifact@v2
-        with:
-          name: head-result
-          path: coverage/.resultset.json
-      # Minimum configuration
-      # - name: Minimum coverage check
-      #   uses: joshmfrankel/simplecov-check-action@main
+      # - name: RSpec Report
+      #   uses: SonicGarden/rspec-report-action@v3
       #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     json-path: tmp/rspec_results.json
+      #   if: always()
+
+      # # upload coverage
+      # - name: Upload coverage report head
+      #   if: always()
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: head-result
+      #     path: coverage/.resultset.json
+      # # Minimum configuration
+      # # - name: Minimum coverage check
+      # #   uses: joshmfrankel/simplecov-check-action@main
+      # #   with:
+      # #     github_token: ${{ secrets.GITHUB_TOKEN }}
       
-      # base 
-      - uses: actions/checkout@v2
-        with:
-          ## Here we do not checkout the current branch, but we checkout the base branch.
-          ref: ${{ github.base_ref }}
-      - uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
-      - name: Run Migrations
-        run: bin/rails db:migrate RAILS_ENV=test
-      - name: Run RSpec
-        run: |
-            bundle exec rspec
-      - name: Upload coverage report base
-        if: always()
-        uses: actions/upload-artifact@v2
-        with:
-          name: base-result
-          path: coverage/.resultset.json
+      # # base 
+      # - uses: actions/checkout@v2
+      #   with:
+      #     ## Here we do not checkout the current branch, but we checkout the base branch.
+      #     ref: ${{ github.base_ref }}
+      # - uses: ruby/setup-ruby@v1
+      #   with:
+      #     bundler-cache: true
+      # - name: Run Migrations
+      #   run: bin/rails db:migrate RAILS_ENV=test
+      # - name: Run RSpec
+      #   run: |
+      #       bundle exec rspec
+      # - name: Upload coverage report base
+      #   if: always()
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: base-result
+      #     path: coverage/.resultset.json
     
   compare:
     name: 'Compare base & head coverages'

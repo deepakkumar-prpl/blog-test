@@ -80,4 +80,5 @@ group :test do
   gem 'simplecov'
   gem 'simplecov-lcov'
   gem 'webdrivers'
+  gem 'simplecov-console'
 end

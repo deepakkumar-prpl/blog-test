@@ -2,14 +2,24 @@
 
 require 'simplecov'
 require 'simplecov-lcov'
-SimpleCov::Formatter::LcovFormatter.config do |c|
-  c.report_with_single_file = true
-end
+require 'simplecov-console'
 
-SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::HTMLFormatter,
-  SimpleCov::Formatter::LcovFormatter
-])
+# SimpleCov::Formatter::LcovFormatter.config do |c|
+#   c.report_with_single_file = true
+# end
+
+# SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new([
+#   SimpleCov::Formatter::HTMLFormatter,
+#   SimpleCov::Formatter::LcovFormatter
+# ])
+SimpleCov.formatter = SimpleCov::Formatter::Console
+SimpleCov::Formatter::Console.sort = 'path' # sort by file path
+SimpleCov::Formatter::Console.show_covered = true # show all files in coverage report
+SimpleCov::Formatter::Console.max_rows = 15 # integer
+SimpleCov::Formatter::Console.max_lines = 5 # integer
+SimpleCov::Formatter::Console.missing_len = 20 # integer
+SimpleCov::Formatter::Console.output_style = 'table' # 'table' (default) or 'block'
+SimpleCov::Formatter::Console.table_options = {:style => {:width => 200}}
 SimpleCov.start do
   enable_coverage :branch
 end
