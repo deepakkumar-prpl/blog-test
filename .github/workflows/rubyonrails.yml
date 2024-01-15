@@ -54,6 +54,8 @@ jobs:
         with:
           github-token: ${{ secrets.github_token }}
           path-to-lcov: 'coverage/lcov.info'
+      - name: Update Codaci Coveralls
+        run: bash <(curl -Ls https://coverage.codacy.com/get.sh)
       # - name: RSpec Report
       #   uses: SonicGarden/rspec-report-action@v3
       #   with:
