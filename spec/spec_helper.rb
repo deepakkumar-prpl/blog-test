@@ -2,9 +2,16 @@
 
 require 'simplecov'
 require 'simplecov-lcov'
+SimpleCov::Formatter::LcovFormatter.config do |c|
+  c.report_with_single_file = true
+end
+
+SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::HTMLFormatter,
+  SimpleCov::Formatter::LcovFormatter
+])
 SimpleCov.start do
   enable_coverage :branch
-  add_group 'RSpec', 'spec'
 end
 
 # Previous content of test helper now starts here
