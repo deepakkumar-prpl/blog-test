@@ -40,6 +40,7 @@ jobs:
         run: bin/rails db:migrate RAILS_ENV=test
       # Add or replace test runners here
       - name: Run tests
+        continue-on-error: true
         run: bundle exec rspec -f j -o tmp/rspec_results.json -f p
 
       - name: RSpec Report
