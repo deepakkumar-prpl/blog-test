@@ -48,11 +48,8 @@ jobs:
             pwd
             ls coverage
             ls coverage/lcov
-      - name: Report code coverage
-        uses: johnsouza-loftbr/very_good_coverage@v1.3.0
-        with:
-          path: './coverage/lcov/blog-test.lcov'
-          min_coverage: 95
+     - name: Coveralls
+       uses: coverallsapp/github-action@v2
 
       # - name: RSpec Report
       #   uses: SonicGarden/rspec-report-action@v3
