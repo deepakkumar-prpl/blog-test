@@ -72,8 +72,9 @@ jobs:
           bundler-cache: true
       - name: Run Migrations
         run: bin/rails db:migrate RAILS_ENV=test
-      - name: Run test
-        run: rspec
+      - name: Run RSpec
+        run: |
+            bundle exec rspec
       - name: Upload coverage report base
         if: always()
         uses: actions/upload-artifact@v2
