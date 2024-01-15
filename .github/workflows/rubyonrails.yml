@@ -48,8 +48,10 @@ jobs:
             pwd
             ls coverage
             ls coverage/lcov
-     - name: Coveralls
-       uses: coverallsapp/github-action@v2
+      - name: Coveralls
+        uses: coverallsapp/github-action@v2
+        with:
+         github-token: ${{ secrets.GITHUB_TOKEN }}
 
       # - name: RSpec Report
       #   uses: SonicGarden/rspec-report-action@v3
