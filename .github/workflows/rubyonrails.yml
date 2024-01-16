@@ -55,7 +55,7 @@ jobs:
           github-token: ${{ secrets.github_token }}
           path-to-lcov: 'coverage/lcov.info'
       - name: Add code coverage comment
-        uses: romeovs/lcov-reporter-action@v0.2.23
+        uses: romeovs/lcov-reporter-action@v0.2.16
         with:
           lcov-file: ./coverage/lcov.info
           github-token: ${{ secrets.GITHUB_TOKEN }}
