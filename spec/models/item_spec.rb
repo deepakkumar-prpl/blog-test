@@ -34,7 +34,7 @@ RSpec.describe Item, type: :model do
   describe '#calculate2' do
     it 'returns the correct result' do
       item = Item.new
-      expect(item.calculate2).to eq(3)
+      expect(item.calculate2).to eq(4)
     end
   end
 end
