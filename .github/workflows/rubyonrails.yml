@@ -60,10 +60,7 @@ jobs:
       #     lcov-file: ./coverage/lcov.info
       #     github-token: ${{ secrets.GITHUB_TOKEN }}
       #     filter-changed-files: true
-      - name: Simplecov Report
-        uses: aki77/simplecov-report-action@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+
       # - name: RSpec Report
       #   uses: SonicGarden/rspec-report-action@v3
       #   with:

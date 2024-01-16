@@ -8,7 +8,6 @@ SimpleCov::Formatter::LcovFormatter.config do |c|
   c.report_with_single_file = true
   c.single_report_path = 'coverage/lcov.info'
 end
-
 require 'codecov'
 # SimpleCov::Formatter::LcovFormatter.config do |c|
 #   c.report_with_single_file = true
@@ -36,6 +35,12 @@ SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new([
 #   end
 # end
 # SimpleCov.formatter = SimpleCov::Formatter::MergedFormatter
+# =======
+# SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new([
+#   SimpleCov::Formatter::HTMLFormatter,
+#   SimpleCov::Formatter::LcovFormatter
+# ])
+# >>>>>>> main
 # SimpleCov.formatter = SimpleCov::Formatter::Console
 # SimpleCov::Formatter::Console.sort = 'path' # sort by file path
 # SimpleCov::Formatter::Console.show_covered = true # show all files in coverage report
