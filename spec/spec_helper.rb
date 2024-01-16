@@ -8,11 +8,39 @@ SimpleCov::Formatter::LcovFormatter.config do |c|
   c.report_with_single_file = true
   c.single_report_path = 'coverage/lcov.info'
 end
+require 'codecov'
+# SimpleCov::Formatter::LcovFormatter.config do |c|
+#   c.report_with_single_file = true
+# end
 
 SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::HTMLFormatter,
+  SimpleCov::Formatter::Codecov,
   SimpleCov::Formatter::LcovFormatter
 ])
+# SimpleCov::Formatter::LcovFormatter.config do |c|
+#   c.report_with_single_file = true
+#   c.single_report_path = 'coverage/lcov.info'
+# end
+
+# SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new([
+#   SimpleCov::Formatter::HTMLFormatter,
+#   SimpleCov::Formatter::LcovFormatter
+# ])
+# require 'simplecov-rcov'
+# class SimpleCov::Formatter::MergedFormatter
+#   def format(result)
+#      SimpleCov::Formatter::HTMLFormatter.new.format(result)
+#      SimpleCov::Formatter::RcovFormatter.new.format(result)
+#   end
+# end
+# SimpleCov.formatter = SimpleCov::Formatter::MergedFormatter
+# =======
+# SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new([
+#   SimpleCov::Formatter::HTMLFormatter,
+#   SimpleCov::Formatter::LcovFormatter
+# ])
+# >>>>>>> main
 # SimpleCov.formatter = SimpleCov::Formatter::Console
 # SimpleCov::Formatter::Console.sort = 'path' # sort by file path
 # SimpleCov::Formatter::Console.show_covered = true # show all files in coverage report

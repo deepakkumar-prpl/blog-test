@@ -45,7 +45,6 @@ jobs:
       - name: Print
         continue-on-error: true
         run: |
-            cp coverage/.last_run.json last.json
             ls
             pwd
             ls coverage
@@ -61,11 +60,7 @@ jobs:
       #     lcov-file: ./coverage/lcov.info
       #     github-token: ${{ secrets.GITHUB_TOKEN }}
       #     filter-changed-files: true
-      - name: Simplecov Report
-        uses: aki77/simplecov-report-action@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          resultPath: last.json
+
       # - name: RSpec Report
       #   uses: SonicGarden/rspec-report-action@v3
       #   with:
