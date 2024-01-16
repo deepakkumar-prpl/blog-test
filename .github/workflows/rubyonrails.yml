@@ -54,12 +54,12 @@ jobs:
         with:
           github-token: ${{ secrets.github_token }}
           path-to-lcov: 'coverage/lcov.info'
-       - name: Add code coverage comment
-         uses: romeovs/lcov-reporter-action@v0.2.23
-         with:
-           lcov-file: ./coverage/lcov.info
-           github-token: ${{ secrets.GITHUB_TOKEN }}
-           filter-changed-files: true
+      - name: Add code coverage comment
+        uses: romeovs/lcov-reporter-action@v0.2.23
+        with:
+          lcov-file: ./coverage/lcov.info
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          filter-changed-files: true
       # - name: RSpec Report
       #   uses: SonicGarden/rspec-report-action@v3
       #   with:
